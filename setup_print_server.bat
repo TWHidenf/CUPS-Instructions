@@ -7,7 +7,6 @@ set /p ipaddr="Enter your Pi's ip address: "
 echo %password%|ssh -tt %username%@%ipaddr% "sudo apt-get update -y;" ^
 	"sudo apt-get upgrade -y;" ^
 	"sudo apt-get install cups -y;" ^
-	"sudo apt-get install printer-driver-gutenprint -y;" ^
 	"sudo usermod -aG lpadmin %username%;" ^
 	"sudo cupsctl --share-printers --remote-any;" ^
 	"sudo systemctl restart cups;" ^
