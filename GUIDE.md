@@ -93,7 +93,7 @@ The screen shows two IP addresses, and you need the second IP. An example IP is 
 
 If you have access to the device list on your local network, for example through your router’s management page, locate the Pi there. When you obtain the IP address, record it somewhere since you will need this in later steps.
 
-![][image1]
+![](./images/image20.jpg)
 
  Your Pi is now ready to be turned into a server for your printer\!
 
