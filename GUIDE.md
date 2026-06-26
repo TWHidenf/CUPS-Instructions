@@ -1,4 +1,4 @@
-# Making a Wired Printer Wireless using a Raspberry Pi \- Full Setup Guide {#making-a-wired-printer-wireless-using-a-raspberry-pi---full-setup-guide}
+# Making a Wired Printer Wireless using a Raspberry Pi - Full Setup Guide
 
 Trenton Hidenfelter, Jacob Hahn
 
@@ -28,7 +28,7 @@ In this document you will be led through the process of setting up a Raspberry P
 
 ## 
 
-## Setting up the Pi {#setting-up-the-pi}
+## Setting up the Pi
 
 \[what is going to be covered in this section, what will follow\]   
 What you’ll need:
@@ -45,7 +45,7 @@ What you’ll need:
       - [ ] Mini-HDMI to HDMI adapter  
             (HDMI cable & Raspberry Pi Zero W, W2)
 
-1. ### Preparing the SD Card {#preparing-the-sd-card}
+1. ### Preparing the SD Card
 
 The [Raspberry Pi Imager](https://www.raspberrypi.com/software/) is a software to prepare your SD card for use with your Raspberry Pi. Install Raspberry Pi Imager and insert the SD card into your computer, then launch the Imager program.
 
@@ -71,14 +71,14 @@ Congrats\! You’re now ready to write your OS and settings to your SD card. Ens
 
 This process will take a few minutes, depending on the speed of the card. Let both the write and verify steps complete without interruption.
 
-2. ### Modifying the config files {#modifying-the-config-files}
+2. ### Modifying the config files
 
 Before inserting the SD card into the Raspberry Pi, there are some text files that need to be modified. Open the SD card’s folders on your computer and locate and open config.txt.  
 At the end of the document, below where it says \[all\], add *dtoverlay=dwc2* . Save and close that file and locate the file cmdline.txt.
 
 In the file cmdline.txt, after the word “rootwait”, add *modules-load=dwc2,g\_ether* . Save and close that file then eject the SD card from your computer. You are now all set to get your Raspberry Pi up and running so proceed to the next step\!
 
-3. ### First time booting of your Pi {#first-time-booting-of-your-pi}
+3. ### First time booting of your Pi
 
 You are now ready to boot up your Pi for the first time\! Now, depending on if you have access to your router settings and can see device IPs through the management tab of your router, this step is going to be slightly different. If you do not have the ability to view all devices connected to your network, you will need to plug your Pi into a screen using an HDMI cable.
 
@@ -97,9 +97,9 @@ If you have access to the device list on your local network, for example through
 
  Your Pi is now ready to be turned into a server for your printer\!
 
-## Setting up the Printer {#setting-up-the-printer}
+## Setting up the Printer
 
-1. ### SSH-ing into your Pi {#ssh-ing-into-your-pi}
+1. ### SSH-ing into your Pi
 
 You will now need to run some commands in your command prompt to set things up. When running commands, type them exactly as written, and replace bracketed text without including the square brackets. 
 
@@ -108,7 +108,7 @@ Replace Pi\_username with the name of the user account that you created in Raspb
 
 Please note, when it asks for your password, use the password you set for your Raspberry Pi when setting it up. You will not be able to see it while you type it. If you are asked if you want to continue with the connection due to security reasons, type ‘yes’.
 
-2. ### Setting up the Software {#setting-up-the-software}
+2. ### Setting up the Software
 
 The first command will update a software called APT, which comes pre-installed on your Raspberry Pi’s operating system. APT manages the installation of other software on your system, and updating it ensures that it has access to the latest software versions when you use it.  
 To update APT, run sudo apt-get update. It may ask you for your password (as shown below), and you’ll have to enter it. Once again, you will not be able to see your password as you type it. Next, you will be installing the printing system, called CUPS, using APT. This software will allow you to access your printer over Wi-Fi.  
@@ -117,7 +117,7 @@ To update APT, run sudo apt-get update. It may ask you for your password (as sho
 To install CUPS, run the command sudo apt-get install cups \-y.  
 ![][image3]
 
-3. ### Setting up the Printer System {#setting-up-the-printer-system}
+3. ### Setting up the Printer System
 
 You are almost done with the process of entering setup commands. The next set of commands will set up permissions to allow you to access the printer from a remote computer, such as the one you are using right now.  
 First, run sudo usermod \-aG lpadmin \[pi\_username\], which allows you to modify printers and their connections to the Raspberry Pi. Remember that pi\_username is the name you entered when creating your user.  
@@ -138,7 +138,7 @@ Once you proceed, you’ll see a prompt to log in. Use the credentials for your 
 
 Once you log in, you’ll be taken to the administration page where you can add the printer you have plugged into your Raspberry Pi. Make sure the printer is plugged into any of the USB ports of the Pi and is powered on from this point forward.
 
-4. ### Adding the Printer Using the Web Interface {#adding-the-printer-using-the-web-interface}
+4. ### Adding the Printer Using the Web Interface
 
 In the Administration tab, select “Find New Printers”
 
@@ -161,7 +161,7 @@ Run the restart command again, and you will be done with the setup\! You can now
 
 ![][image9]
 
-5. ### Adding the Printer to your Computer {#adding-the-printer-to-your-computer}
+5. ### Adding the Printer to your Computer
 
 While you have your printer selected in the “Printers” tab as shown, copy the URL in the address bar, highlighted in the image. Next, open your settings and navigate to Printers & scanners using the search bar, select Add a printer or scanner, then Add a Printer Manually, then “Select a shared printer by name” and paste in the URL you just copied. Change where it says http**s**:// to http:// (no ‘s’) if it is not already.
 
