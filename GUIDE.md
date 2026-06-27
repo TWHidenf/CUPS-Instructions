@@ -164,11 +164,17 @@ To restart the printing service and apply your changes, run ```sudo systemctl re
 
 ![][image7]
 
-You are done with typing commands for a little bit and now need to open your web browser of choice. Then, type \[IP\_address\]:631 into the address bar. Do not close the command prompt window.
+You are done with typing commands for a little bit and now need to open your web browser of choice. Then, type ```\[IP\_address\]:631``` into the address bar. Do not close the command prompt window.
+
+![][image23]
 
 From the above page, you’ll go to the “Administration” tab at the top bar. If you see an error about an upgrade being required, just wait a minute and it’ll automatically bring you to the administration page. At this point, you’ll probably see a security warning, but this is a false alert from your browser and is safe to ignore. Click on “Advanced”. then the link at the bottom that says “Proceed”.
 
+![][image36]
+
 Once you proceed, you’ll see a prompt to log in. Use the credentials for your Raspberry Pi user.
+
+![][imagex35]
 
 Once you log in, you’ll be taken to the administration page where you can add the printer you have plugged into your Raspberry Pi. Make sure the printer is plugged into any of the USB ports of the Pi and is powered on from this point forward.
 
@@ -188,7 +194,7 @@ To save the printer and driver, click the “Add Printer” button at the bottom
 
 Now you'll navigate to the Printers tab in the top bar and select the queue for the printer you just added. Highlight and copy the bold printer name at the top of the page once the queue  has been selected. This will be the printer name you set earlier if you chose a custom one, or the default for your type of printer if you did not.
 
-Switch back to your SSH command prompt. Using the name you just copied, run the command sudo lpadmin \-p \[printer\_name\] \-o printer-is-shared=true. This will make sure the printer is accessible remotely.
+Switch back to your SSH command prompt. Using the name you just copied, run the command sudo lpadmin ```\-p \[printer\_name\] \-o printer-is-shared=true```. This will make sure the printer is accessible remotely.
 
 ![][image8]
 
