@@ -2,6 +2,8 @@
 
 Trenton Hidenfelter, Jacob Hahn
 
+![][IMG_3617]
+
 In this guide, you will be led through the process of configuring a Raspberry Pi to transform a wired USB printer into a WiFi-enabled printer, which you can print to wirelessly from any device on your network.
 
 
@@ -216,9 +218,17 @@ Run the restart command again, and you will be done with the setup\! You can now
 
 5. ### Adding the Printer to your Computer
 
-While you have your printer selected in the “Printers” tab as shown, copy the URL in the address bar, highlighted in the image. Next, open your settings and navigate to Printers & scanners using the search bar, select Add a printer or scanner, then Add a Printer Manually, then “Select a shared printer by name” and paste in the URL you just copied. Change where it says http**s**:// to http:// (no ‘s’) if it is not already.
+While you have your printer selected in the “Printers” tab as shown, copy the URL in the address bar, highlighted in the image.
+
+![][image9]
+
+Next, open your settings and navigate to Printers & scanners using the search bar, select Add a printer or scanner, then Add a Printer Manually, then “Select a shared printer by name” and paste in the URL you just copied. Change where it says http**s**:// to http:// (no ‘s’) if it is not already.
+
+![][image10]
 
 Next you’ll be asked to select a driver. Install the driver for your printer from the manufacturer’s website if you don’t already have it installed, and choose “Have Disk”. Otherwise, select the driver for your printer if the driver is displayed in the menu. You can find the driver for your printer on the support pages for your printer.
+
+![][image14]
 
 Select OK and you’ll be all set up to use your wired printer wirelessly from your computer\! Make sure your Pi and printer are powered on and connected whenever you plan to print.
 
@@ -287,3 +297,10 @@ Select OK and you’ll be all set up to use your wired printer wirelessly from y
 [image32]: <./images/image32.png>
 
 [image28]: <./images/image28.png>
+
+[IMG_3617]: <./images/IMG_3617.JPG>
+[image9]: <./images/image9.png>
+
+[image10]: <./images/image10.png>
+
+[image14]: <./images/image14.png>
