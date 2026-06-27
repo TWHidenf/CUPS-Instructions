@@ -125,7 +125,7 @@ If you have access to the device list on your local network, for example through
 
 You will now need to run some commands in your command prompt to set things up. When running commands, type them exactly as written, and replace bracketed text without including the square brackets. 
 
-To connect to your Raspberry Pi and set up its software, you’re going to connect to it through a Secure Shell, or SSH. To do this, open your command prompt as an administrator by pressing the WINDOWS key then typing in the search bar “cmd” then clicking the highlighted “Run as administrator” as seen, and run the command ssh \[Pi\_username\]@\[IP\_address\].  
+To connect to your Raspberry Pi and set up its software, you’re going to connect to it through a Secure Shell, or SSH. To do this, open your command prompt as an administrator by pressing the WINDOWS key then typing in the search bar “cmd” then clicking the highlighted “Run as administrator” as seen, and run the command ```ssh \[Pi\_username\]@\[IP\_address\]```.  
 Replace Pi\_username with the name of the user account that you created in Raspberry Pi Imager, and IP\_address with the IP that you found at first boot. Remember to not include the brackets in your command.
 
 ![][image33]
@@ -137,25 +137,31 @@ Please note, when it asks for your password, use the password you set for your R
 2. ### Setting up the Software
 
 The first command will update a software called APT, which comes pre-installed on your Raspberry Pi’s operating system. APT manages the installation of other software on your system, and updating it ensures that it has access to the latest software versions when you use it.  
-To update APT, run sudo apt-get update. It may ask you for your password (as shown below), and you’ll have to enter it. Once again, you will not be able to see your password as you type it. Next, you will be installing the printing system, called CUPS, using APT. This software will allow you to access your printer over Wi-Fi.  
+To update APT, run ```sudo apt-get update```. It may ask you for your password (as shown below), and you’ll have to enter it. Once again, you will not be able to see your password as you type it. Next, you will be installing the printing system, called CUPS, using APT. This software will allow you to access your printer over Wi-Fi.
+
 ![][image35]
 
-To install CUPS, run the command sudo apt-get install cups \-y.  
+To install CUPS, run the command ```sudo apt-get install cups \-y```.
+
 ![][image5]
 
 3. ### Setting up the Printer System
 
 You are almost done with the process of entering setup commands. The next set of commands will set up permissions to allow you to access the printer from a remote computer, such as the one you are using right now.  
-First, run sudo usermod \-aG lpadmin \[pi\_username\], which allows you to modify printers and their connections to the Raspberry Pi. Remember that pi\_username is the name you entered when creating your user.  
-![][image4]
+First, run sudo usermod ```\-aG lpadmin \[pi\_username\]```, which allows you to modify printers and their connections to the Raspberry Pi. Remember that pi\_username is the name you entered when creating your user.
 
-Next, you’re going to enable the sharing and remote access of your printers connected to the Pi by using sudo cupsctl –-share-printers –-remote-any.  
-![][image5]
+![][image30]
 
-Almost done\! You need to enable the web interface for the printers so you can more easily add new printers and access admin settings. The command to run is sudo cupsctl WebInterface=yes.  
-![][image6]
+Next, you’re going to enable the sharing and remote access of your printers connected to the Pi by using ```sudo cupsctl –-share-printers –-remote-any```.
 
-To restart the printing service and apply your changes, run sudo systemctl restart cups. You’ll be running this again later and should run it after you make any changes to CUPS through the command prompt.  
+![][image8]
+
+Almost done\! You need to enable the web interface for the printers so you can more easily add new printers and access admin settings. The command to run is ```sudo cupsctl WebInterface=yes```.
+
+![][image25]
+
+To restart the printing service and apply your changes, run ```sudo systemctl restart cups```. You’ll be running this again later and should run it after you make any changes to CUPS through the command prompt.
+
 ![][image7]
 
 You are done with typing commands for a little bit and now need to open your web browser of choice. Then, type \[IP\_address\]:631 into the address bar. Do not close the command prompt window.
@@ -182,7 +188,8 @@ To save the printer and driver, click the “Add Printer” button at the bottom
 
 Now you'll navigate to the Printers tab in the top bar and select the queue for the printer you just added. Highlight and copy the bold printer name at the top of the page once the queue  has been selected. This will be the printer name you set earlier if you chose a custom one, or the default for your type of printer if you did not.
 
-Switch back to your SSH command prompt. Using the name you just copied, run the command sudo lpadmin \-p \[printer\_name\] \-o printer-is-shared=true. This will make sure the printer is accessible remotely.  
+Switch back to your SSH command prompt. Using the name you just copied, run the command sudo lpadmin \-p \[printer\_name\] \-o printer-is-shared=true. This will make sure the printer is accessible remotely.
+
 ![][image8]
 
 Run the restart command again, and you will be done with the setup\! You can now add the printer to your local computer with the steps below.
@@ -234,3 +241,11 @@ Select OK and you’ll be all set up to use your wired printer wirelessly from y
 [image35]: <./images/image35.png>
 
 [image5]: <./images/image5.png>
+
+[image30]: <./images/image30.png>
+
+[image8]: <./images/image8.png>
+
+[image25]: <./images/image25.png>
+
+[image7]: <./images/image7.png>
